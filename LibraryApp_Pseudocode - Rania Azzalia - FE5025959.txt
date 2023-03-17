@@ -1,0 +1,71 @@
+PROGRAM PERPUSTAKAAN
+
+READ AND WRITE "PunyaAkun" with boolean
+STORE "PunyaAkun" with TRUE
+
+IF "PunyaAkun" equal TRUE
+	GOTO PROCEDURE LOGIN
+ELSE
+	GOTO PROCEDURE SIGNUP
+
+PROCEDURE SIGNUP
+	STORE "NamaPengguna" dengan nama yang ingin didaftarkan
+	STORE "Password" dengan angka yang ingin didaftarkan
+IF "NamaPengguna, Password" equal TRUE
+	PRINT "Selamat datang"
+	GOTO PROCEDURE LOGIN
+ELSE
+	PRINT "gagal, coba ulangi lagi"
+CALL SIGNUP
+END PROCEDURE
+
+PROCEDURE LOGIN
+READ AND WRITE "NamaPengguna" with string
+READ AND WRITE "Password" with number
+	STORE "NamaPengguna" dengan nama yang telah didaftarkan
+	STORE "Password" dengan angka yang telah di daftarkan
+IF "NamaPengguna, Password" equal TRUE
+	PRINT "Selamat datang"
+ELSE
+	PRINT "gagal, coba ulangi lagi"
+	GOTO HALAMAN UTAMA
+CALL LOGIN
+END PROCEDURE
+
+READ AND WRITE "PeminjamanBuku" with boolean
+READ AND WRITE "JudulBuku" with string
+READ AND WRITE "KetersediaanBuku" with number
+READ AND WRITE "HariPeminjaman" with string
+READ AND WRITE "HariPengembalian" with string
+	STORE "PeminjamanBuku" with TRUE
+
+	WHILE "PeminjamanBuku" equal TRUE
+	INPUT "JudulBuku" 
+	
+	IF "KetersediaanBuku" more than 0
+		PRINT "Buku Tersedia"
+		INPUT "HariPeminjaman"
+		INPUT "HariPengembalian"
+		GOTO PERPUSTAKAAN
+	ELSE
+		PRINT "Buku Tidak Tersedia"
+		GOTO INPUT "JudulBuku"
+	END IF
+
+READ AND WRITE "PengembalianBuku" with boolean
+	STORE "PengembalianBuku" with TRUE
+
+	WHILE "PengembalianBuku" equal TRUE
+	INPUT "JudulBuku"
+	INPUT "HariPeminjaman"
+	INPUT "HariPengembalian"
+	GOTO PERPUSTAKAAN
+
+END PROGRAM
+
+
+
+
+
+
+	
